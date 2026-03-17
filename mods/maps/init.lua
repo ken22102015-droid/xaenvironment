@@ -64,6 +64,21 @@ minetest.register_chatcommand("ttmd", {
 	end
 })
 
+minetest.register_chatcommand("exitmap", {
+	params = "<player>",
+	description = "Exit current map",
+	func = function(name, param)
+		local p1 = minetest.get_player_by_name(name)
+		local p2 = minetest.get_player_by_name(param)
+		if p2 ~= nil and minetest.check_player_privs(name,{bring=true}) and p2:get_meta():get_int("maps_exit") == 1 then
+			local inv = player_style.players[param].inv
+			inv.adds_func.maps_exit(p2)
+		elseif param == "" and p1:get_meta():get_int("maps_exit") == 1 then
+			local inv = player_style.players[name].inv
+			inv.adds_func.maps_exit(p1)
+		end
+	end
+})
 
 maps.get_pos=function(pos)
 	return vector.add(pos,{x=0,y=28500,z=0})
