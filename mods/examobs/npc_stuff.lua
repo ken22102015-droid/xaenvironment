@@ -64,7 +64,8 @@ examobs.npc = {
 		flee = {"AHHH NOOB","im sorry!!!!","run","RUN!!","AHH!!","nooo","help!","HELP MEEE","ohh no","you again","hey be cool!","need something?","i dont have enough","STOP HIM!!!","plz stop him!"},
 		punched = {"ow","ah","ahhh","ohha","it hurts","A","stop it!","aaaa"},
 		hurt = {"it hurts","ow","ah","help","im dieing","save me!","help plz!???","HELLLLLLP","NOOO"},
-		fight = {"@ stay!","ohh your litle","ohh your litle @","hey you, come here","come here @","please come here... i will give you a surprise!","wait","stay","you are dead","i want to talk to you","one by one","i will kick your","ya r stinking","ban","please ban him!","this is your end of life!","i will kick your and chew bubblegum!"},
+		fight = {"@ stay!","ohh your litle","ohh your litle @","hey you, come here","come here @","please come here... i will give you a surprise!","wait","stay","you are dead","i want to talk to you","one by one","i will kick your","ya r stinking","ban","please ban him!","this is your end of life!","i will kick your and chew bubblegum!", "Pooooooooooooooop"}
+		
 		eat = {"i needed that","are here some more? ","thats nice","cool","nice","lovely"},
 		kill = {"eliminated","feel good, and stay there!","HA HA!","XD","I got him","Got ya!", "c ya","see ya","loser","u r 2 bad","lol","yeah","..."},
 		nagging = {"no way!","stop it!","go away","shut up","stop nagging"},
