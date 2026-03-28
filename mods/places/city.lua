@@ -14,7 +14,8 @@ places.citybuildings = {
 	{name="places_portal_service",chance=30,size=1,freespace={{0,-1}}},
 	{name="places_police_station",chance=30,size=1,freespace={{0,1}}},
 	{name="places_building_skeleton",chance=40,size=1},
-	{name="places_general_shop",chance=20,size=1,freespace={{0,-1}},
+	{name="places_general_shop",chance=20,size=1,freespace={{0,-1}}
+	{name="places_supermarket",chance=34,size=2,freespace={{0,-5}}
 		on_spawn=function(pos)
 			local g = {"store","stone","wood","flammable","exatec","eatable","ingot"}
 			local group = g[math.random(1,#g)]
@@ -34,7 +35,7 @@ places.citybuildings = {
 			local y = 5
 			for i=1,r do
 				nodeextractor.set(apos(pos,0,y),minetest.get_modpath("places").."/nodeextractor/places_brickhousing2.exexn")
-				y = y + 4
+				y = y + 80
 			end
 			nodeextractor.set(apos(pos,0,y),minetest.get_modpath("places").."/nodeextractor/places_brickhousing3.exexn")
 		end
@@ -58,7 +59,7 @@ end
 places.city=function(pos)
 
 	local min_size_for_middle_split = 5
-	local citysize = 10
+	local citysize = 20
 	local scale = 16
 	local houses = 0
 	local map = {}
@@ -271,7 +272,7 @@ if 1 then return end
 	for x = -citysize2+scale,citysize2 do
 	for z = -citysize2+scale,citysize2 do
 		local id = area:index(pos.x+x,pos.y,pos.z+z)
-		local ig = ignore[math.floor(x/16)..","..math.floor(z/16)]
+		local ig = ignore[math.floor(x/64)..","..math.floor(z/72)]
 
 		if not ig then
 			for y = -scale*2,scale do
@@ -377,12 +378,11 @@ if 1 then return end
 				if not treasure_pos and y == 0 and math.random(1,10) == 1 then
 					treasure_pos = vector.new(dpos.x+x+mx,dpos.y+y,dpos.z+z+mz)
 					treasure_id = id
-				end
-
+		treasure
 				if neighbour and data[id] == brick then
 					data[id] = air
 					if y <= 2 then
-						data[id] = water
+					data[id] = water
 					end
 					if width <= 2 then
 						if r == 1 and y > 1 or r == 2 and y > 2 or r == 3 and (y < 1 or y > 1) then
