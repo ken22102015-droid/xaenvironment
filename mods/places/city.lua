@@ -43,8 +43,8 @@ places.citybuildings = {
 	},
 }
 
-minetest.register_tool("places:gencity", {
-	groups = {in_creative_inventory=1,},
+minetest.register_tool("places:genc", {
+	groups = {not_in_creative_inventory=1,},
 	inventory_image = "default_stick.png",
 	on_use=function(itemstack, user, pointed_thing)
 		if minetest.check_player_privs(user:get_player_name(), {server=true}) then
@@ -60,8 +60,8 @@ end
 places.city=function(pos)
 
 	local min_size_for_middle_split = 5
-	local citysize = 100
-	local scale = 32
+	local citysize = 20
+	local scale = 16
 	local houses = 4
 	local map = {}
 	local ignore = {}
