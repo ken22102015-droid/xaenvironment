@@ -14,9 +14,8 @@ places.citybuildings = {
 	{name="places_portal_service",chance=30,size=1,freespace={{0,-1}}},
 	{name="places_police_station",chance=30,size=1,freespace={{0,1}}},
 	{name="places_building_skeleton",chance=40,size=1},
-	{name="places_general_shop",chance=20,size=1,freespace={{0,-1}},
-	{name="places_supermarket",chance=35,size=2,freespace={{0,-1}}
-			
+	{name="places_general_shop",chance=20,size=1,freespace={{0,-1}}
+	{name="place_hotel",chance=33,size=1,freespace={{5,1}}		
 		on_spawn=function(pos)
 			local g = {"store","stone","wood","flammable","exatec","eatable","ingot"}
 			local group = g[math.random(1,#g)]
@@ -43,8 +42,8 @@ places.citybuildings = {
 	},
 }
 
-minetest.register_tool("places:gencity", {
-	groups = {in_creative_inventory=1,},
+minetest.register_tool("places:genc", {
+	groups = {not_in_creative_inventory=1,},
 	inventory_image = "default_stick.png",
 	on_use=function(itemstack, user, pointed_thing)
 		if minetest.check_player_privs(user:get_player_name(), {server=true}) then
