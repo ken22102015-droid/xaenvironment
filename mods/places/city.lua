@@ -15,6 +15,8 @@ places.citybuildings = {
 	{name="places_police_station",chance=30,size=1,freespace={{0,1}}},
 	{name="places_building_skeleton",chance=40,size=1},
 	{name="places_general_shop",chance=20,size=1,freespace={{0,-1}},
+    {name="places_supermarket",chance=35,size=2,freespace={{0,-1}}}
+	
 		on_spawn=function(pos)
 			local g = {"store","stone","wood","flammable","exatec","eatable","ingot"}
 			local group = g[math.random(1,#g)]
@@ -58,9 +60,9 @@ end
 places.city=function(pos)
 
 	local min_size_for_middle_split = 5
-	local citysize = 10
-	local scale = 16
-	local houses = 0
+	local citysize = 100
+	local scale = 32
+	local houses = 2
 	local map = {}
 	local ignore = {}
 	local sewer_map = {}
