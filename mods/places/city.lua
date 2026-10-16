@@ -15,8 +15,6 @@ places.citybuildings = {
 	{name="places_police_station",chance=30,size=1,freespace={{0,1}}},
 	{name="places_building_skeleton",chance=40,size=1},
 	{name="places_general_shop",chance=20,size=1,freespace={{0,-1}},
-    {name="places_supermarket",chance=35,size=2,freespace={{0,-1}}}
-	{name="mall",chance=50,size=1,freespace={{0,-1.2}}
 	
 		on_spawn=function(pos)
 			local g = {"store","stone","wood","flammable","exatec","eatable","ingot"}
